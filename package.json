@@ -65,7 +65,7 @@
   "scripts": {
     "start": "lint-staged ; node scripts/start.js",
     "build": "lint-staged ; node scripts/build.js",
-    "lint": "lint-staged",
+    "lint": "tslint --project tsconfig.json --fix --format stylish  ; prettier --write 'src/**/*.{ts,tsx,jsx}' ",
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {

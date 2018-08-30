@@ -15,6 +15,6 @@ export const issueReducer = reducerWithInitialState(initialState).case(
   loadIssuesActions.loadIssues.done,
   (state, value) => ({
     ...state,
-    value
+    issues: value.result.issues
   })
 );
