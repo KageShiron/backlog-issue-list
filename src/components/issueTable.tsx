@@ -1,10 +1,10 @@
 import * as React from "react";
 import { IssueActions } from "../containers/issueContainer";
-import { IssueState } from "../states/issueState";
+import { IssuesState } from "../states/issueState";
 
 // interface OwnProps {}
 
-type IssueTableProps = /*OwnProps &*/ IssueState & IssueActions;
+type IssueTableProps = /*OwnProps &*/ IssuesState & IssueActions;
 
 export const IssueTable: React.SFC<IssueTableProps> = (
   props: IssueTableProps

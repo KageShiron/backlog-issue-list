@@ -6,12 +6,13 @@ import { IssueTable } from "../components/issueTable";
 import { IAppState } from "../store";
 
 export interface IssueActions {
-  loadIssues: (v: string) => Action<string>;
+  loadIssues: (v: { apiKey: string }) => Action<string>;
 }
 
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
-    loadIssues: (v: string) => dispatch(loadIssuesActions.loadIssues())
+    loadIssues: (v: string) =>
+      dispatch(loadIssuesActions.loadIssues.started({ apiKey: v }))
   };
 }
 

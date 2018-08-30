@@ -2,17 +2,19 @@ import { reducerWithInitialState } from "typescript-fsa-reducers";
 import { loadIssuesActions } from "../actions/loadAction";
 import { IIssue } from "../backlog";
 
-export interface IssueState {
+import "rxjs";
+export interface IssuesState {
   issues: IIssue[];
 }
 
-const initialState: IssueState = {
+const initialState: IssuesState = {
   issues: []
 };
 
 export const issueReducer = reducerWithInitialState(initialState).case(
-  loadIssuesActions.loadIssues,
-  (state, name) => {
-    return Object.assign({}, state, { name });
-  }
+  loadIssuesActions.loadIssues.done,
+  (state, value) => ({
+    ...state,
+    value
+  })
 );
