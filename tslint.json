@@ -1,16 +1,17 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "linterOptions": {
-    "rulesDirectory": ["tslint-plugin-prettier"],
     "exclude": [
       "config/**/*.js",
-      "node_modules/**/*.ts",
+      "node_modules",
       "coverage/lcov-report/*.js",
       "tslint-config-prettier"
-    ],
-    "rules": {
-      "interface-name": [true, "never-prefix"],
-      "jsx-no-lambda": false
-    }
+    ]
+  },
+  "defaultSeverity": "warning",
+  "rules": {
+    "interface-name": false,
+    "jsx-no-lambda": false
   }
 }

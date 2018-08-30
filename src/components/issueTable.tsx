@@ -1,8 +1,6 @@
 import * as React from "react";
-import { ChangeEvent } from "react";
 import { IssueActions } from "../containers/issueContainer";
 import { IssuesState } from "../states/issueState";
-
 // interface OwnProps { apiKey2 : string}
 
 type IssueTableProps = /*OwnProps &*/ IssuesState & IssueActions;
@@ -42,7 +40,7 @@ export class IssueTable extends React.Component<
     this.props.loadIssues({ apiKey: this.state.apiKey });
   }
 
-  private handleChang(e: ChangeEvent<HTMLInputElement>): void {
+  private handleChang(e: React.ChangeEvent<HTMLInputElement>): void {
     this.setState({ apiKey: e.target.value });
   }
 }

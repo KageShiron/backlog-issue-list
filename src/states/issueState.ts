@@ -2,7 +2,6 @@ import { reducerWithInitialState } from "typescript-fsa-reducers";
 import { loadIssuesActions } from "../actions/loadAction";
 import { IIssue } from "../backlog";
 
-import "rxjs";
 export interface IssuesState {
   issues: IIssue[];
 }
